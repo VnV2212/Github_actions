@@ -8,4 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: xyz
-        run: echo ${{secrets.SOUL_NAME}}
+        env: 
+          sekret: ${{secrets.SOUL_NAME}}
+        run: echo $sekret
