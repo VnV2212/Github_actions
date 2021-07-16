@@ -1,10 +1,15 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  example-job:
+    name: Save output
     runs-on: ubuntu-latest
     steps:
-      - name: 'Hello world'
-        run: echo "Hello $var1"
-        env:
-          var1: Vatsal
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-log-file
+          path: output.log
