@@ -1,0 +1,9 @@
+name: dwnld
+on: [push]
+jobs:
+  example-job:
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: output-log-file
