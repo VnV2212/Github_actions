@@ -23,3 +23,10 @@ jobs:
         with: 
           name: assets-for-download
           path: downloads   
+  download-build-artifacts:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Use the download Artifact GitHub Action
+        uses: actions/download-artifact@v2
+        with: 
+          name: assets-for-download
